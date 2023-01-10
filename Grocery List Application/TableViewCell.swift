@@ -15,6 +15,11 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var subTitle: UILabel!
     
+    func setupCell(titleName: String, subTitleEmail: String) {
+        title.text = titleName
+        subTitle.text = subTitleEmail
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

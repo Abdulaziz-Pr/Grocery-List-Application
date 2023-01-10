@@ -23,6 +23,7 @@
 		848B9CD3296AC0C200210606 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CD2296AC0C200210606 /* DatabaseManager.swift */; };
 		848B9CD7296B358B00210606 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CD6296B358B00210606 /* ListViewController.swift */; };
 		848B9CD9296B35B600210606 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CD8296B35B600210606 /* TableViewCell.swift */; };
+		848B9CDB296C156700210606 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CDA296C156700210606 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		848B9CD2296AC0C200210606 /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		848B9CD6296B358B00210606 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		848B9CD8296B35B600210606 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		848B9CDA296C156700210606 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				848B9CBC296A99BE00210606 /* Info.plist */,
 				848B9CD6296B358B00210606 /* ListViewController.swift */,
 				848B9CD8296B35B600210606 /* TableViewCell.swift */,
+				848B9CDA296C156700210606 /* Model.swift */,
 			);
 			path = "Grocery List Application";
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848B9CDB296C156700210606 /* Model.swift in Sources */,
 				848B9CD3296AC0C200210606 /* DatabaseManager.swift in Sources */,
 				848B9CB3296A99BC00210606 /* ViewController.swift in Sources */,
 				848B9CAF296A99BC00210606 /* AppDelegate.swift in Sources */,
