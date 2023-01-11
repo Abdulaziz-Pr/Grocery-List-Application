@@ -12,6 +12,10 @@ class UserTableViewCell: UITableViewCell {
     
    // @IBOutlet weak var user: UILabel!
     
+    
+    
+    @IBOutlet weak var emailOn: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

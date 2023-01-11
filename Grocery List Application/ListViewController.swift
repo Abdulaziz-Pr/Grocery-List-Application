@@ -115,14 +115,12 @@ class ListViewController: UIViewController, UITableViewDelegate,UITableViewDataS
         let alert = UIAlertController(title: "Edit", message: "Edit task", preferredStyle: .alert)
         let update = UIAlertAction(title: "Update", style: .default) {_ in
            self.itemId = self.items[indexPath.row].key
-            self.arr()
+            self.addGrocery()
             let updateName = self.changeText?.text
             let n = grocery(name: updateName ?? "", addByUser: self.user ?? "", key: updateName ?? "")
-           // self.items[indexPath.row] = n
-          //  self.ref.child(grocery.).updateChildValues(n.toAnyObject() as! [AnyHashable: Any])
+           
             self.ref.child(self.itemId).updateChildValues(n.toAnyObject() as! [AnyHashable: Any])
-//            let additemRef = self.ref.child("\(updateName ?? "")")
-//            additemRef.setValue(n.toAnyObject())
+
 
         }
          self.ourList.reloadData()
@@ -139,7 +137,7 @@ class ListViewController: UIViewController, UITableViewDelegate,UITableViewDataS
        present(alert, animated: true, completion: nil)
     }
     
-    func arr (){
+    func addGrocery (){
         ref.child(itemId).observeSingleEvent(of: .value, with: { (snapshot) in
                     let personDict = snapshot.value as? [String: Any]
                     let name = personDict?["name"] as? String
@@ -150,5 +148,6 @@ class ListViewController: UIViewController, UITableViewDelegate,UITableViewDataS
                     print(error.localizedDescription)
                 }
             }
+    
     
 }

@@ -39,8 +39,10 @@ struct grocery {
         ]
     }
 }
+
+
 struct Users {
-    var ref = Database.database().reference()
+    var refUsers = Database.database().reference()
     let onlineUser : String
     
     init(onlineUser: String) {
@@ -49,11 +51,11 @@ struct Users {
     init?(snapshot: DataSnapshot){
         guard
             let value = snapshot.value as? [String: AnyObject],
-            let user = value["online"] as? String
+            let user = value["Online"] as? String
              else{
             return nil
         }
-        self.ref = snapshot.ref
+        self.refUsers = snapshot.ref
         self.onlineUser = user
         
     }

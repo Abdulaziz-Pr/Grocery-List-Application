@@ -24,7 +24,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+            email.text = ""
+            pass.text = ""
+
+        }
     
     @IBAction func logIn(_ sender: Any) {
         
@@ -41,11 +47,16 @@ class ViewController: UIViewController {
             }else{
                 self.performSegue(withIdentifier: "goTonext", sender: self)
                 let user = Users(onlineUser: Auth.auth().currentUser?.email ?? "")
+                
                // let additemRef = self.ref.child("Online11")
                 self.ref.setValue(user.toAnyObject())
-                
+               
+               
             }
+            
+            
         }
+        
     }
     
     
@@ -59,7 +70,14 @@ class ViewController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
             if error != nil {
-                self.alertNewUserError()            }
+                self.alertNewUserError()
+                
+            }else{
+                let user = Users(onlineUser: Auth.auth().currentUser?.email ?? "")
+               
+               self.ref.setValue(user.toAnyObject())
+                self.performSegue(withIdentifier: "goTonext", sender: self)
+            }
             
              
             
@@ -88,4 +106,16 @@ class ViewController: UIViewController {
     
    
 }
+extension ViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      if textField == email {
+          pass.becomeFirstResponder()
+      }
+      if textField == pass {
+        textField.resignFirstResponder()
+      }
+      return true
+    }
+  }
 

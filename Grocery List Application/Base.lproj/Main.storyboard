@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Family Gerocery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amm-at-njA">
-                                <rect key="frame" x="16" y="172" width="361" height="39.666666666666629"/>
+                                <rect key="frame" x="16" y="172" width="361" height="39.666666666666657"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="33"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,7 +30,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cD4-3z-TGf">
                                 <rect key="frame" x="25" y="397.66666666666669" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SF7-kn-zKG">
                                 <rect key="frame" x="25" y="473.66666666666669" width="343" height="35"/>
@@ -77,7 +77,7 @@
                     <connections>
                         <outlet property="email" destination="sih-xy-bXP" id="Ddn-ci-KlU"/>
                         <outlet property="pass" destination="cD4-3z-TGf" id="2jL-FM-1iW"/>
-                        <segue destination="5tt-wn-IGc" kind="push" identifier="goTonext" id="9um-XD-L5h"/>
+                        <segue destination="5tt-wn-IGc" kind="show" identifier="goTonext" id="9um-XD-L5h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -147,9 +147,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Gerocery List" id="qYg-iH-9wo">
-                        <barButtonItem key="leftBarButtonItem" title="1" id="TFJ-If-C9m">
+                        <barButtonItem key="leftBarButtonItem" title="1" id="QBt-yV-LG3">
                             <connections>
-                                <action selector="onlineUsers:" destination="5tt-wn-IGc" id="u6T-FP-Qay"/>
+                                <action selector="onlineUsers:" destination="5tt-wn-IGc" id="1yK-HO-L6v"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="AaD-wI-lZW">
@@ -160,14 +160,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ourList" destination="EyA-Cu-f2D" id="Viv-E1-LvD"/>
-                        <segue destination="eN2-Bl-LGY" kind="push" identifier="goToUsers" id="B5z-jR-yBT"/>
+                        <segue destination="eN2-Bl-LGY" kind="show" identifier="goToUsers" id="B5z-jR-yBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZW7-oK-wHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2900" y="-16"/>
         </scene>
-        <!--Online Users-->
+        <!--Family (online)-->
         <scene sceneID="dHk-p2-KVw">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="eN2-Bl-LGY" customClass="OnlineUsers" customModule="Grocery_List_Application" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,31 +175,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T7b-eJ-b6D">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hbM-Sz-I6v">
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="195" id="pGe-pX-ke5" customClass="UserTableViewCell" customModule="Grocery_List_Application" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="195"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pF0-hS-hAr" customClass="UserTableViewCell" customModule="Grocery_List_Application" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="21.333333969116211"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pGe-pX-ke5" id="3wk-CS-G4O">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="195"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pF0-hS-hAr" id="0qT-tq-i53">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="21.333333969116211"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RX9-TK-Js1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="21.333333333333332"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RX9-TK-Js1" firstAttribute="leading" secondItem="0qT-tq-i53" secondAttribute="leading" id="JG8-EP-WW9"/>
+                                                <constraint firstItem="RX9-TK-Js1" firstAttribute="top" secondItem="0qT-tq-i53" secondAttribute="top" id="SdV-VD-O1R"/>
+                                                <constraint firstAttribute="bottom" secondItem="RX9-TK-Js1" secondAttribute="bottom" id="Z4c-fa-AsQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="RX9-TK-Js1" secondAttribute="trailing" id="xn7-xM-HaK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="emailOn" destination="RX9-TK-Js1" id="PvG-vL-NKE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="eN2-Bl-LGY" id="EL0-65-Cku"/>
+                                    <outlet property="delegate" destination="eN2-Bl-LGY" id="kZv-0i-QbQ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ik7-46-CGK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T7b-eJ-b6D" firstAttribute="leading" secondItem="Ik7-46-CGK" secondAttribute="leading" id="EhV-Yf-nHu"/>
-                            <constraint firstItem="Ik7-46-CGK" firstAttribute="bottom" secondItem="T7b-eJ-b6D" secondAttribute="bottom" id="HpD-DK-XWg"/>
-                            <constraint firstItem="Ik7-46-CGK" firstAttribute="trailing" secondItem="T7b-eJ-b6D" secondAttribute="trailing" id="O1L-E4-Ta2"/>
-                            <constraint firstItem="T7b-eJ-b6D" firstAttribute="top" secondItem="Ik7-46-CGK" secondAttribute="top" id="U8n-kY-hdh"/>
+                            <constraint firstItem="Ik7-46-CGK" firstAttribute="bottom" secondItem="hbM-Sz-I6v" secondAttribute="bottom" id="1HO-pg-duI"/>
+                            <constraint firstItem="hbM-Sz-I6v" firstAttribute="top" secondItem="Ik7-46-CGK" secondAttribute="top" id="7ts-91-gjC"/>
+                            <constraint firstItem="hbM-Sz-I6v" firstAttribute="leading" secondItem="Ik7-46-CGK" secondAttribute="leading" id="oNT-oT-V2y"/>
+                            <constraint firstItem="Ik7-46-CGK" firstAttribute="trailing" secondItem="hbM-Sz-I6v" secondAttribute="trailing" id="qPt-yg-Ic1"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Rr-9f-3wq">
+                    <navigationItem key="navigationItem" title="Family (online)" id="5Rr-9f-3wq">
                         <barButtonItem key="rightBarButtonItem" title="Sign out" id="Z2a-an-nTw">
                             <connections>
                                 <action selector="signOut:" destination="eN2-Bl-LGY" id="fdj-jI-ym8"/>
@@ -207,7 +228,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="usertableview" destination="T7b-eJ-b6D" id="SMJ-vi-hRz"/>
+                        <outlet property="userTableView" destination="hbM-Sz-I6v" id="FT1-nq-YwY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05F-2u-y1X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
