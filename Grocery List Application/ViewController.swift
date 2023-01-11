@@ -10,7 +10,8 @@ import Firebase
 import FirebaseDatabase
 
 class ViewController: UIViewController {
-    
+    let ref = Database.database().reference(withPath: "Online")
+    var items : [Users] = []
     
     @IBOutlet weak var email: UITextField!
     
@@ -39,6 +40,10 @@ class ViewController: UIViewController {
 
             }else{
                 self.performSegue(withIdentifier: "goTonext", sender: self)
+                let user = Users(onlineUser: Auth.auth().currentUser?.email ?? "")
+               // let additemRef = self.ref.child("Online11")
+                self.ref.setValue(user.toAnyObject())
+                
             }
         }
     }

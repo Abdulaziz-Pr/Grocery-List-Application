@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848A3120296DD92B00164E9B /* OnlineUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A311F296DD92B00164E9B /* OnlineUsers.swift */; };
+		848A3122296DEC1100164E9B /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A3121296DEC1100164E9B /* UserTableViewCell.swift */; };
 		848B9CAF296A99BC00210606 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CAE296A99BC00210606 /* AppDelegate.swift */; };
 		848B9CB1296A99BC00210606 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CB0296A99BC00210606 /* SceneDelegate.swift */; };
 		848B9CB3296A99BC00210606 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848B9CB2296A99BC00210606 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		848A311F296DD92B00164E9B /* OnlineUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineUsers.swift; sourceTree = "<group>"; };
+		848A3121296DEC1100164E9B /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		848B9CAB296A99BC00210606 /* Grocery List Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Grocery List Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848B9CAE296A99BC00210606 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		848B9CB0296A99BC00210606 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 				848B9CD6296B358B00210606 /* ListViewController.swift */,
 				848B9CD8296B35B600210606 /* TableViewCell.swift */,
 				848B9CDA296C156700210606 /* Model.swift */,
+				848A311F296DD92B00164E9B /* OnlineUsers.swift */,
+				848A3121296DEC1100164E9B /* UserTableViewCell.swift */,
 			);
 			path = "Grocery List Application";
 			sourceTree = "<group>";
@@ -186,8 +192,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				848B9CDB296C156700210606 /* Model.swift in Sources */,
+				848A3122296DEC1100164E9B /* UserTableViewCell.swift in Sources */,
 				848B9CD3296AC0C200210606 /* DatabaseManager.swift in Sources */,
 				848B9CB3296A99BC00210606 /* ViewController.swift in Sources */,
+				848A3120296DD92B00164E9B /* OnlineUsers.swift in Sources */,
 				848B9CAF296A99BC00210606 /* AppDelegate.swift in Sources */,
 				848B9CD9296B35B600210606 /* TableViewCell.swift in Sources */,
 				848B9CD7296B358B00210606 /* ListViewController.swift in Sources */,

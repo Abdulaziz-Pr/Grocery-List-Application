@@ -39,3 +39,28 @@ struct grocery {
         ]
     }
 }
+struct Users {
+    var ref = Database.database().reference()
+    let onlineUser : String
+    
+    init(onlineUser: String) {
+        self.onlineUser = onlineUser
+    }
+    init?(snapshot: DataSnapshot){
+        guard
+            let value = snapshot.value as? [String: AnyObject],
+            let user = value["online"] as? String
+             else{
+            return nil
+        }
+        self.ref = snapshot.ref
+        self.onlineUser = user
+        
+    }
+    func toAnyObject()-> Any {
+    return[
+        "User": onlineUser
+        
+        ]
+    }
+}

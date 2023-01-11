@@ -23,6 +23,12 @@ class ListViewController: UIViewController, UITableViewDelegate,UITableViewDataS
     @IBOutlet weak var ourList: UITableView!
     
     
+    
+    @IBAction func onlineUsers(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToUsers", sender: self)
+    }
+    
+    
     @IBAction func addItem(_ sender: Any) {
         
         
@@ -56,20 +62,13 @@ class ListViewController: UIViewController, UITableViewDelegate,UITableViewDataS
 
         self.present(alertController, animated: true)
   }
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+
         
         ref.observe(.value, with: { snapshot in
             print(snapshot.value as Any)
